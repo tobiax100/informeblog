@@ -1,0 +1,244 @@
+/* ===== VARIABLES Y ESTILOS BASE ===== */
+        :root {
+            --primary-dark: #0b2b40;
+            --primary: #1a4b6d;
+            --primary-light: #4a7c9c;
+            --accent: #e67e22;
+            --accent-soft: #f39c12;
+            --text-dark: #1e293b;
+            --text-body: #334155;
+            --bg-light: #f8fafc;
+            --bg-card: #ffffff;
+            --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-body);
+            background-color: #f1f5f9;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Merriweather', serif;
+            font-weight: 700;
+            color: var(--primary-dark);
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: clamp(2.2rem, 8vw, 3.2rem);
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+            border-radius: 2px;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        /* ===== NAVBAR PERSONALIZADA ===== */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%) !important;
+            box-shadow: var(--shadow-md);
+            padding: 0.8rem 0;
+        }
+
+        .navbar-brand, .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .navbar-nav .nav-link {
+            position: relative;
+            margin: 0 0.25rem;
+            padding: 0.5rem 1rem !important;
+            border-radius: 30px;
+        }
+
+        .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        /* ===== CONTENEDOR PRINCIPAL ===== */
+        main {
+            padding: 2rem 0;
+        }
+
+        article {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--bg-card);
+            border-radius: 2rem 2rem 2rem 2rem;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        /* Cada sección como tarjeta blanca con padding */
+        section {
+            padding: 2.5rem 2rem;
+            border-bottom: 1px solid #e9eef2;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background: white;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        section:hover {
+            box-shadow: inset 0 0 0 2px var(--accent-soft), var(--shadow-md);
+            transform: scale(1.01);
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Imágenes con estilo atractivo */
+        img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: var(--shadow-lg);
+            margin: 2rem 0 1rem 0;
+            border: 4px solid white;
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        img:hover {
+            transform: scale(1.02);
+            filter: brightness(1.05);
+        }
+
+        /* Listas con estilo personalizado */
+        ul {
+            list-style: none;
+            padding-left: 0.5rem;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.05rem;
+        }
+
+        ul li::before {
+            content: "●";
+            position: absolute;
+            left: -0.25rem;
+            top: 0;
+            font-size: 1.2rem;
+            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+        }
+
+        /* Estilo especial para el strong dentro de comportamiento */
+        strong {
+            display: block;
+            background: linear-gradient(145deg, #fff6e9, #ffeed9);
+            padding: 1.5rem 2rem;
+            border-radius: 18px;
+            margin: 1.5rem 0;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            border-left: 6px solid var(--accent);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* Primera sección (introducción) con fondo suave */
+        section:first-of-type {
+            background: linear-gradient(135deg, #f9fcff, #ffffff);
+        }
+
+        /* ===== BOTÓN FLOTANTE DE PROGRESO (opcional, para retener) ===== */
+        .progress-container {
+            position: sticky;
+            top: 0;
+            z-index: 1020;
+            background: transparent;
+            padding: 0.5rem 0;
+            margin-bottom: -1rem;
+            pointer-events: none;
+        }
+
+        .progress-bar-custom {
+            height: 6px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+            width: 0%;
+            border-radius: 3px;
+            transition: width 0.1s;
+            box-shadow: 0 0 10px var(--accent-soft);
+        }
+
+        /* Footer invisible de momento, pero lo dejamos listo si se quiere */
+        .reading-time {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .reading-time i {
+            color: var(--accent);
+        }
+
+        /* Ajustes responsivos */
+        @media (max-width: 768px) {
+            section {
+                padding: 2rem 1.25rem;
+            }
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+        }
+
+        /* Pequeño detalle de "tarjeta" para las listas */
+        ul {
+            background: #f9fbfd;
+            padding: 1.5rem 1.5rem 1rem 2rem;
+            border-radius: 28px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02), var(--shadow-sm);
+        }
